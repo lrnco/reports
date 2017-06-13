@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="{{site.lang}}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    {% seo %}
+
+    <link rel="icon" href="assets/icons/favicon.ico">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#fcd83e">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Think Eva">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Think Eva">
+
+    <link rel="apple-touch-icon" href="assets/icons/icon-48x48.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/icons/icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="96x96" href="assets/icons/icon-96x96.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/icons/icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="assets/icons/icon-192x192.png">
+
+    <meta name="msapplication-TileImage" content="assets/icons/icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#fcd83e">
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <link href="https://fonts.googleapis.com/css?family=Arvo:400,700|Open+Sans:300,300i,600,700" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <div class="navbar">
+
+        <div>
+          <a class="brand" href="http://thinkeva.com.br/"> {% include svgs/think-eva-logo.svg %} </a>
+          <h1 class="title" itemprop="headline">{% t main.title %}</h1>
+        </div>
+
+        <div>
+          <div class="translation">
+            {% for lang in site.languages %}
+              {% if lang == "pt-br" %}
+                 <a class="{% if site.lang == 'pt-br' %} active {% endif %}" href="{{ site.baseurl_root }}/">PT</a>
+               {% else %}
+                 <a class="{% if site.lang == lang %} active {% endif %}" href="{{ site.baseurl_root }}/{{ lang }}">{{lang}}</a>
+               {% endif %}
+            {% endfor %}
+         </div>
+
+          <div class="social-icons">
+           {% for icon in site.social_icons %}
+             <a href="{{ icon.url }}{{ site.url }}">
+               {% include {{ icon.title | prepend: 'svgs/' | append: '.svg' }} %}
+             </a>
+           {% endfor %}
+         </div>
+        </div>
+
+      </div>
+
+    </header>

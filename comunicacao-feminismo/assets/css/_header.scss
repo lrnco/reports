@@ -1,0 +1,145 @@
+.navbar {
+  width: calc(100% - 24px);
+  height: calc(60px - 24px);
+  padding: 12px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition:.1s;
+  transform: translateZ(0);
+
+  &, > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .brand {
+    align-self: flex-start;
+    margin-right: 30px;
+    svg {
+        width: 120px;
+        height: 60px;
+        transition:.1s;
+        transform: translateZ(0);
+    }
+  }
+
+  .translation  a {
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-family: $font__text;
+    color: $color__yellow;
+    padding: 3px 8px;
+    transition: color .2s, background-color .2s;
+
+    &.active {
+      color: $color__black;
+      background-color: $color__yellow;
+    }
+  }
+
+  .title, .social-icons {
+    display: none;
+  }
+}
+
+.social-icons {
+    margin:0; padding:0;
+
+    a { transition:.1s;
+        transform: translateZ(0);
+
+        overflow: hidden;
+        text-decoration: none;
+        text-align: center;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+        width: 36px;
+        height: 36px;
+        border-radius: 36px;
+        margin-right: 24px;
+        color: $color__black;
+        background-color: $color__yellow;
+        transition: color .2s, background-color .2s;
+
+        &:hover {
+            z-index: 2;
+            -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+        }
+
+        &:last-child{ margin: 0; }
+
+        svg { height: 18px; }
+    }
+}
+
+@include media-breakpoint-up(md) {
+  .navbar {
+    width: calc(100% - 72px);
+    height: 60px;
+    padding: 48px 36px;
+
+    .brand {
+      align-self: auto;
+      margin-top: 40px;
+      svg {
+        width: 190px;
+        height: 96px;
+      }
+    }
+
+    .social-icons {
+      display: block;
+      margin-left: 30px;
+    }
+
+    .title {
+      font-size: 16px;
+      color: $color__black;
+    }
+
+    &.scrolled {
+      width: calc(100% - 72px);
+      height: calc(60px - 24px);
+      padding: 12px 36px;
+      background-color: rgba($color__white, .9);
+
+      .brand {
+        svg {
+          width: 144px;
+          height: 72px;
+        }
+      }
+
+      .title {
+        display: block;
+      }
+
+      .translation  a{
+        color: $color__black;
+        &.active {
+          background-color: $color__black;
+          color: $color__yellow;
+        }
+      }
+
+      .social-icons a {
+        background-color: $color__black;
+        svg {
+          fill: $color__yellow;
+        }
+      }
+
+
+    }
+
+  }
+}

@@ -1,0 +1,55 @@
+h1 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.4;
+  text-transform: uppercase;
+  font-family: $font__main;
+  color: $color__yellow;
+}
+
+h2 {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-family: $font__main;
+  color: $color__black;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.5;
+  font-family: $font__text;
+  color: $color__dark_grey;
+}
+
+h4 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.33;
+  font-family: $font__main;
+  color: $color__black;
+}
+
+h5 {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.33;
+  font-family: $font__main;
+  color: $color__black;
+}
+
+p {
+  line-height: 1.75;
+}
+
+
+@include media-breakpoint-up(md) {
+  h1 { font-size: 42px; }
+  h2 { font-size: 60px; }
+  h3 { font-size: 24px; }
+  h4 { font-size: 36px; }
+  h5 { font-size: 36px; }
+}
